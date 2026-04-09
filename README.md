@@ -2,7 +2,7 @@
 
 A complete, community-maintained archive of every Blender Conference — with talk summaries, speaker info, YouTube links, tools discussed, and context for every level of Blender user.
 
-**Live site:** [your-username.github.io/bcon-archive](https://your-username.github.io/bcon-archive)
+**Live site:** [Shadow13-13.github.io/bcon-archive](https://your-username.github.io/bcon-archive)
 
 ---
 
