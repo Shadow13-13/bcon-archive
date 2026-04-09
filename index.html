@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BCON Archive — Blender Conference Field Guides</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .hero { position: relative; overflow: hidden; padding: 100px 40px 80px; background: var(--surface); border-bottom: 1px solid var(--border); }
+  .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 100% 80% at 50% -20%, rgba(244,117,33,0.18) 0%, transparent 70%); pointer-events: none; }
+  .hero::after { content: 'BCON'; position: absolute; right: -20px; top: 20px; font-family: var(--display); font-size: 280px; color: rgba(244,117,33,0.04); line-height: 1; pointer-events: none; letter-spacing: -4px; }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero-kicker { font-family: var(--mono); font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--orange); margin-bottom: 20px; }
+  .hero h1 { font-family: var(--display); font-size: clamp(64px, 10vw, 120px); letter-spacing: 2px; line-height: 0.9; color: var(--text); margin-bottom: 32px; }
+  .hero h1 em { color: var(--orange); font-style: normal; }
+  .hero-desc { font-size: 17px; color: var(--text-dim); max-width: 560px; line-height: 1.8; margin-bottom: 40px; }
+  .hero-stats { display: flex; gap: 40px; flex-wrap: wrap; margin-top: 20px; padding-top: 32px; border-top: 1px solid var(--border); }
+  .hero-stat-num { font-family: var(--display); font-size: 40px; color: var(--orange); line-height: 1; }
+  .hero-stat-lbl { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-dimmer); margin-top: 4px; }
+
+  /* EVENT CARDS */
+  .events-grid { max-width: 860px; margin: 64px auto; padding: 0 40px; }
+  .events-section-title { font-family: var(--mono); font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--text-dimmer); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .event-card { display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 28px 32px; margin-bottom: 16px; text-decoration: none; color: inherit; transition: all 0.2s; position: relative; overflow: hidden; }
+  .event-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--border); transition: background 0.2s; }
+  .event-card:hover { border-color: var(--orange-dim); transform: translateY(-1px); box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+  .event-card:hover::before { background: var(--orange); }
+  .event-card.featured { border-color: rgba(244,117,33,0.3); background: rgba(244,117,33,0.04); }
+  .event-card.featured::before { background: var(--orange); }
+  .event-card.upcoming { border-color: rgba(62,207,142,0.2); }
+  .event-card.upcoming::before { background: var(--green); }
+  .event-year { font-family: var(--display); font-size: 48px; color: var(--orange); line-height: 1; }
+  .event-year.green { color: var(--green); }
+  .event-title { font-weight: 700; font-size: 18px; color: var(--text); margin-bottom: 6px; }
+  .event-subtitle { font-family: var(--mono); font-size: 11px; color: var(--orange); margin-bottom: 10px; letter-spacing: 0.5px; }
+  .event-subtitle.green { color: var(--green); }
+  .event-desc { font-size: 13px; color: var(--text-dim); line-height: 1.6; max-width: 500px; }
+  .event-meta { display: flex; gap: 12px; margin-top: 12px; flex-wrap: wrap; }
+  .event-meta-item { font-family: var(--mono); font-size: 10px; letter-spacing: 1px; color: var(--text-dimmer); }
+  .event-meta-item::before { content: '▸ '; color: var(--orange); }
+  .event-meta-item.green-meta::before { color: var(--green); }
+  .event-cta { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; flex-shrink: 0; }
+  .cta-btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 20px; border-radius: 5px; font-family: var(--mono); font-size: 11px; letter-spacing: 1px; text-decoration: none; border: 1px solid; white-space: nowrap; transition: all 0.15s; }
+  .cta-btn-orange { background: var(--orange-glow); border-color: var(--orange-dim); color: var(--orange); }
+  .cta-btn-orange:hover { background: rgba(244,117,33,0.25); }
+  .cta-btn-green { background: rgba(62,207,142,0.08); border-color: rgba(62,207,142,0.3); color: var(--green); }
+  .cta-btn-green:hover { background: rgba(62,207,142,0.18); }
+  .cta-btn-dim { background: transparent; border-color: var(--border); color: var(--text-dim); }
+  .cta-btn-dim:hover { background: var(--surface2); color: var(--text); }
+  .event-card.disabled { opacity: 0.5; pointer-events: none; }
+  .tag-count { font-family: var(--mono); font-size: 10px; color: var(--text-dimmer); letter-spacing: 1px; }
+
+  /* ABOUT SECTION */
+  .about-section { max-width: 860px; margin: 0 auto 64px; padding: 0 40px; }
+  .about-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+  .about-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 20px; }
+  .about-icon { font-size: 24px; margin-bottom: 10px; }
+  .about-title { font-weight: 600; font-size: 14px; margin-bottom: 6px; }
+  .about-text { font-size: 12px; color: var(--text-dim); line-height: 1.6; }
+
+  @media (max-width: 640px) {
+    .events-grid { padding: 0 20px; }
+    .event-card { grid-template-columns: 1fr; }
+    .event-cta { align-items: flex-start; }
+    .hero { padding: 60px 20px 50px; }
+    .about-section { padding: 0 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav-bar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">BCON ARCHIVE</a>
+    <div class="nav-links">
+      <a href="bcon25.html">BCON25</a>
+      <span class="nav-sep">·</span>
+      <a href="bcon24.html">BCON24</a>
+      <span class="nav-sep">·</span>
+      <a href="bcon_la_2024.html">BCON LA</a>
+      <span class="nav-sep">·</span>
+      <a href="bcon23.html">BCON23</a>
+      <span class="nav-sep">·</span>
+      <a href="bcon22.html">BCON22</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker">The Complete Blender Conference Archive</div>
+    <h1>EVERY<br><em>BCON.</em><br>ONE PLACE.</h1>
+    <p class="hero-desc">
+      Field guides for every Blender Conference — talk summaries, speaker profiles, tools discussed, YouTube links, and context. For hobbyists, freelancers, and studio professionals.
+    </p>
+    <div class="header-links">
+      <a class="pill pill-orange" href="bcon25.html">▶ Start with BCON25 (Latest)</a>
+      <a class="pill pill-dim" href="https://www.blender.org/@BlenderOfficial" target="_blank">Blender YouTube</a>
+      <a class="pill pill-dim" href="https://conference.blender.org" target="_blank">Official Site</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">6</div>
+        <div class="hero-stat-lbl">Events Covered</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">300+</div>
+        <div class="hero-stat-lbl">Talks Documented</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">2022</div>
+        <div class="hero-stat-lbl">Archive from</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">Free</div>
+        <div class="hero-stat-lbl">Always</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<div class="events-grid">
+
+  <!-- UPCOMING -->
+  <div class="events-section-title">⚡ UPCOMING</div>
+
+  <a class="event-card upcoming" href="https://bconna.org/2026/" target="_blank">
+    <div>
+      <div class="event-title">BCON North America 2026 <span class="badge-upcoming">Upcoming</span></div>
+      <div class="event-subtitle green">Austin, Texas · April 13–14, 2026</div>
+      <div class="event-desc">The return of North American BCON — organized by CG Cookie and Autotroph. Two days of talks, workshops, and community. Recordings will be posted to CG Cookie YouTube after the event.</div>
+      <div class="event-meta">
+        <span class="event-meta-item green-meta">Austin, TX</span>
+        <span class="event-meta-item green-meta">April 13–14, 2026</span>
+        <span class="event-meta-item green-meta">bconna.org</span>
+      </div>
+    </div>
+    <div class="event-cta">
+      <div class="event-year green">NA26</div>
+      <div class="cta-btn cta-btn-green">INFO ↗</div>
+    </div>
+  </a>
+
+  <a class="event-card upcoming" href="https://conference.blender.org/2026/" target="_blank">
+    <div>
+      <div class="event-title">Blender Conference 2026 <span class="badge-upcoming">Upcoming</span></div>
+      <div class="event-subtitle green">Amsterdam · September 23–25, 2026</div>
+      <div class="event-desc">The flagship annual Blender Conference returns to Felix Meritis in Amsterdam. Tickets and call for presentations TBA.</div>
+      <div class="event-meta">
+        <span class="event-meta-item green-meta">Felix Meritis, Amsterdam</span>
+        <span class="event-meta-item green-meta">Sept 23–25, 2026</span>
+      </div>
+    </div>
+    <div class="event-cta">
+      <div class="event-year green">26</div>
+      <div class="cta-btn cta-btn-green">INFO ↗</div>
+    </div>
+  </a>
+
+  <!-- PAST EVENTS -->
+  <div class="events-section-title" style="margin-top:48px;">📼 PAST EVENTS — COMPLETE FIELD GUIDES</div>
+
+  <!-- BCON25 -->
+  <a class="event-card featured" href="bcon25.html">
+    <div>
+      <div class="event-title">Blender Conference 2025</div>
+      <div class="event-subtitle">Amsterdam, Netherlands · September 17–19, 2025</div>
+      <div class="event-desc">The most documented BCON yet. 80 talks covering Geometry Nodes, the new animation system (Baklava), Rig Nodes, Compositing 5.0, Blue Prince, the film "Flow", Sonic the Hedgehog 3 VFX, Framestore, Volkswagen, DOGWALK and much more.</div>
+      <div class="event-meta">
+        <span class="event-meta-item">80 talks</span>
+        <span class="event-meta-item">3 days</span>
+        <span class="event-meta-item">4 parallel tracks</span>
+        <span class="event-meta-item">Full talk guide</span>
+      </div>
+    </div>
+    <div class="event-cta">
+      <div class="event-year">25</div>
+      <div class="cta-btn cta-btn-orange">READ GUIDE →</div>
+      <div class="tag-count">80 videos</div>
+    </div>
+  </a>
+
+  <!-- BCON LA 2024 -->
+  <a class="event-card" href="bcon_la_2024.html">
+    <div>
+      <div class="event-title">BCON LA 2024</div>
+      <div class="event-subtitle">Hollywood, Los Angeles · April 19–20, 2024</div>
+      <div class="event-desc">The first-ever official Blender Conference in the United States. Organized by CG Cookie and Autotroph. Features Ian Hubert, Colin Levy, Jules Urbach, and a packed schedule of US-based artists and studios.</div>
+      <div class="event-meta">
+        <span class="event-meta-item">~35 talks</span>
+        <span class="event-meta-item">2 days</span>
+        <span class="event-meta-item">Hollywood, CA</span>
+        <span class="event-meta-item">Full schedule</span>
+      </div>
+    </div>
+    <div class="event-cta">
+      <div class="event-year" style="color:var(--blue)">LA</div>
+      <div class="cta-btn cta-btn-orange">READ GUIDE →</div>
+    </div>
+  </a>
+
+  <!-- BCON24 -->
+  <a class="event-card" href="bcon24.html">
+    <div>
+      <div class="event-title">Blender Conference 2024</div>
+      <div class="event-subtitle">Amsterdam, Netherlands · October 23–25, 2024</div>
+      <div class="event-desc">Theme: "Making Blender." Features the début of Project Gold's oil painting system, major updates to Cycles denoising, gizmo-based Geometry Nodes tools, UI improvement proposals from Blender Guru, and the new Extensions platform.</div>
+      <div class="event-meta">
+        <span class="event-meta-item">~60 talks</span>
+        <span class="event-meta-item">3 days</span>
+        <span class="event-meta-item">5 parallel tracks</span>
+      </div>
+    </div>
+    <div class="event-cta">
+      <div class="event-year">24</div>
+      <div class="cta-btn cta-btn-orange">READ GUIDE →</div>
+    </div>
+  </a>
+
+  <!-- BCON23 -->
+  <a class="event-card" href="bcon23.html">
+    <div>
+      <div class="event-title">Blender Conference 2023</div>
+      <div class="event-subtitle">Amsterdam, Netherlands · October 26–28, 2023</div>
+      <div class="event-desc">Celebrated 21 years of open-source Blender. Key topics: Simulation Zones in Geometry Nodes, Grease Pencil evolution, Flamenco render farm, glTF ecosystem, USD pipeline integration, and a first look at what would become Blender 4.x.</div>
+      <div class="event-meta">
+        <span class="event-meta-item">~60 talks</span>
+        <span class="event-meta-item">3 days</span>
+        <span class="event-meta-item">5 tracks</span>
+      </div>
+    </div>
+    <div class="event-cta">
+      <div class="event-year">23</div>
+      <div class="cta-btn cta-btn-orange">READ GUIDE →</div>
+    </div>
+  </a>
+
+  <!-- BCON22 -->
+  <a class="event-card" href="bcon22.html">
+    <div>
+      <div class="event-title">Blender Conference 2022</div>
+      <div class="event-subtitle">Amsterdam, Netherlands · October 27–29, 2022</div>
+      <div class="event-desc">BCON's triumphant return after two pandemic years (2020 & 2021 were cancelled). The largest BCON ever at the time, with 700+ attendees and 94 recorded presentations. Marked Blender's emergence as a serious industry tool.</div>
+      <div class="event-meta">
+        <span class="event-meta-item">94 talks</span>
+        <span class="event-meta-item">3 days</span>
+        <span class="event-meta-item">5 tracks</span>
+        <span class="event-meta-item">Post-pandemic return</span>
+      </div>
+    </div>
+    <div class="event-cta">
+      <div class="event-year">22</div>
+      <div class="cta-btn cta-btn-orange">READ GUIDE →</div>
+    </div>
+  </a>
+
+  <!-- BCON21 / 20 NOTE -->
+  <div class="event-card disabled">
+    <div>
+      <div class="event-title">BCON 2020 & 2021</div>
+      <div class="event-subtitle">Cancelled — COVID-19 pandemic</div>
+      <div class="event-desc">Both editions were cancelled due to the global pandemic. The Blender community held online events and developer streams in their place. BCON returned in October 2022.</div>
+    </div>
+    <div class="event-cta">
+      <div class="event-year" style="color:var(--text-dimmer)">—</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ABOUT -->
+<div class="about-section">
+  <div class="events-section-title">ℹ️ ABOUT THIS ARCHIVE</div>
+  <div class="about-grid">
+    <div class="about-card">
+      <div class="about-icon">🎯</div>
+      <div class="about-title">What this is</div>
+      <div class="about-text">Curated field guides for every Blender Conference. Each page summarizes talks, links to YouTube recordings, and provides context — so you know what to watch and why before you press play.</div>
+    </div>
+    <div class="about-card">
+      <div class="about-icon">🌐</div>
+      <div class="about-title">Open on GitHub</div>
+      <div class="about-text">This site is hosted on GitHub Pages. It's open-source, static HTML with no tracking. You can fork it, contribute, or self-host. See the README for details.</div>
+    </div>
+    <div class="about-card">
+      <div class="about-icon">📺</div>
+      <div class="about-title">All talks are free</div>
+      <div class="about-text">Every talk from every BCON is freely available on the official Blender YouTube channel (or CG Cookie for BCON LA). All links in these guides go directly to the source.</div>
+    </div>
+    <div class="about-card">
+      <div class="about-icon">🧑‍💻</div>
+      <div class="about-title">Who it's for</div>
+      <div class="about-text">Built for the full spectrum: hobbyist discovering Blender, freelancer evaluating tools, studio professional benchmarking pipelines. Talks are tagged and described for all levels.</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>BCON Archive — Community-maintained field guides for Blender Conference talks</p>
+  <p style="margin-top:8px;">Official Blender Conference: <a href="https://conference.blender.org" target="_blank">conference.blender.org</a> · Blender YouTube: <a href="https://youtube.com/@BlenderOfficial" target="_blank">@BlenderOfficial</a></p>
+  <p style="margin-top:8px;color:var(--text-dimmer)">Not affiliated with the Blender Foundation. All recordings © Blender Foundation.</p>
+</footer>
+
+</body>
+</html>

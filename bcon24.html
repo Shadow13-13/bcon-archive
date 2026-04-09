@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blender Conference 2024 — Field Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav-bar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">BCON ARCHIVE</a>
+    <div class="nav-links">
+      <a href="bcon25.html">BCON25</a>
+      <span class="nav-sep">·</span>
+      <a href="bcon24.html" class="active">BCON24</a>
+      <span class="nav-sep">·</span>
+      <a href="bcon_la_2024.html">BCON LA</a>
+      <span class="nav-sep">·</span>
+      <a href="bcon23.html">BCON23</a>
+      <span class="nav-sep">·</span>
+      <a href="bcon22.html">BCON22</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="header-inner">
+    <div class="tag-line">Blender Conference 2024 · Amsterdam · October 23–25, 2024</div>
+    <h1>BCON<span>24</span></h1>
+    <div class="header-meta">
+      <span>Felix Meritis, Amsterdam</span>
+      <span>~60 recorded talks</span>
+      <span>3 days · 5 parallel tracks</span>
+      <span>Theme: "Making Blender"</span>
+    </div>
+    <p class="header-desc">
+      The year Project Gold debuted, Blender's new animation system got its first public progress report, gizmo-based Geometry Nodes were previewed, and Andrew Price returned with bold UI improvement proposals.
+    </p>
+    <div class="header-links">
+      <a class="pill pill-orange" href="https://www.youtube.com/playlist?list=PLa1F2ddGya_-Ymw4YlOjqrdQxiRMJql5x" target="_blank">▶ Full YouTube Playlist</a>
+      <a class="pill pill-dim" href="https://conference.blender.org/2024/" target="_blank">Official Site</a>
+      <a class="pill pill-dim" href="https://video.blender.org/c/blender_conference/videos" target="_blank">PeerTube</a>
+    </div>
+  </div>
+</header>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat"><div class="stat-num">~60</div><div class="stat-lbl">Talks</div></div>
+    <div class="stat"><div class="stat-num">3</div><div class="stat-lbl">Days</div></div>
+    <div class="stat"><div class="stat-num">5</div><div class="stat-lbl">Tracks</div></div>
+    <div class="stat"><div class="stat-num">Oct '24</div><div class="stat-lbl">Date</div></div>
+  </div>
+</div>
+
+<main>
+
+<div class="notice" style="margin-top:40px;">
+  <strong>Context:</strong> BCON24's theme was "Making Blender" — presenting everything that's interesting for contributors, from "Making Blender better" to "Making Blender work in a pipeline." Project Gold's avant-première was screened at the Wednesday evening festival. Overall feedback rated program satisfaction as "high" (down slightly from BCON23's "extremely high"), leading to program quality improvements in BCON25.
+</div>
+
+<!-- KEYNOTE -->
+<div class="section" id="keynote">
+  <div class="section-header">
+    <span class="section-icon">🎯</span>
+    <h2>KEYNOTE</h2>
+  </div>
+  <div class="talk">
+    <div class="talk-header">
+      <div>
+        <div class="talk-title">Keynote — State of Blender 2024</div>
+        <div class="talk-speaker">Ton Roosendaal — Blender Foundation</div>
+        <div class="talk-tags"><span class="tag tag-orange">KEYNOTE</span><span class="tag tag-blue">ROADMAP</span></div>
+      </div>
+      <a class="watch-btn" href="https://www.youtube.com/playlist?list=PLa1F2ddGya_-Ymw4YlOjqrdQxiRMJql5x" target="_blank">▶ PLAYLIST</a>
+    </div>
+    <div class="talk-body">
+      <div class="talk-summary">The annual state-of-Blender from Ton Roosendaal — covering new features, foundation finances, development progress, and the road ahead. Highlights for 2024 include the completion of Blender 4.x infrastructure, Extensions platform launch, and ongoing Cycles improvements.</div>
+      <div class="highlight-box"><strong>Never miss the Keynote</strong> — it sets the context for everything else at the conference and previews what's coming.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CORE DEV -->
+<div class="section" id="dev">
+  <div class="section-header">
+    <span class="section-icon">⚙️</span>
+    <h2>CORE DEVELOPMENT</h2>
+  </div>
+
+  <div class="talk">
+    <div class="talk-header">
+      <div>
+        <div class="talk-title">Forget About Nodes — Gizmo-Based Geometry Nodes Tools</div>
+        <div class="talk-speaker">Simon Thommes — Blender Studio</div>
+        <div class="talk-tags"><span class="tag tag-blue">GEO NODES</span><span class="tag tag-red">DEVELOPMENT</span><span class="tag tag-yellow">UX</span></div>
+      </div>
+      <a class="watch-btn" href="https://www.youtube.com/playlist?list=PLa1F2ddGya_-Ymw4YlOjqrdQxiRMJql5x" target="_blank">▶ PLAYLIST</a>
+    </div>
+    <div class="talk-body">
+      <div class="talk-summary">Simon Thommes previews gizmo-based tools built with Geometry Nodes — where Geo Nodes groups can expose interactive viewport gizmos (handles, sliders, arrows) that let non-technical users interact with complex node systems without opening the node editor. This makes Geo Nodes a platform for building custom tools as approachable as built-in Blender tools.</div>
+      <div class="highlight-box"><strong>Top 10 community favorite.</strong> This fundamentally changes how Geo Nodes can be used as a tool-building platform — expect this to reduce the need for many custom add-ons.</div>
+    </div>
+  </div>
+
+  <div class="talk">
+    <div class="talk-header">
+      <div>
+        <div class="talk-title">A New Animation System — Progress Report</div>
+        <div class="talk-speaker">dr. Sybren A. Stüvel & Nathan Vegdahl</div>
+        <div class="talk-tags"><span class="tag tag-purple">ANIMATION</span><span class="tag tag-red">DEVELOPMENT</span><span class="tag tag-orange">BAKLAVA</span></div>
+      </div>
+      <a class="watch-btn" href="https://www.youtube.com/playlist?list=PLa1F2ddGya_-Ymw4YlOjqrdQxiRMJql5x" target="_blank">▶ PLAYLIST</a>
+    </div>
+    <div class="talk-body">
+      <div class="talk-summary">The progress report on Project Baklava — Blender's new layered animation system (continued at BCON25 as "Slot It Like It's Hot"). Covers the new Animation data-block, how multi-object animation works, and the timeline for getting this in animators' hands. This talk received very well-received feedback and influenced how the team communicated progress in subsequent conferences.</div>
+      <div class="detail-label">References</div>
+      <div class="detail-text">Project Baklava · Layered animation system · Animation data-block · NLA replacement · Sybren's presentation slides (published on stuvel.eu)</div>
+    </div>
+  </div>
+
+  <div class="talk">
+    <div class="talk-header">
+      <div>
+        <div class="talk-title">Denoising in Cycles — The Full Story</div>
+        <div class="talk-speaker">Lukas Stockner — Cycles Developer</div>
+        <div class="talk-tags"><span class="tag tag-red">CYCLES</span><span class="tag tag-blue">RENDERING</span><span class="tag tag-purple">ALGORITHM</span></div>
+      </div>
+      <a class="watch-btn" href="https://www.youtube.com/playlist?list=PLa1F2ddGya_-Ymw4YlOjqrdQxiRMJql5x" target="_blank">▶ PLAYLIST</a>
+    </div>
+    <div class="talk-body">
+      <div class="talk-summary">A deep technical dive into how Cycles denoising (OptiX, OpenImageDenoise) actually works — the algorithms, the training data, why it fails in certain situations, and what future improvements look like. Lukas is the Cycles developer who built much of the denoising pipeline.</div>
+      <div class="highlight-box"><strong>Top 10 community favorite.</strong> Understanding denoising helps artists set render settings more intelligently — knowing why certain scenes denoise badly is actionable knowledge.</div>
+    </div>
+  </div>
+
+  <div class="talk">
+    <div class="talk-header">
+      <div>
+        <div class="talk-title">Why Does Blender Crash? And the Road to Vulkan</div>
+        <div class="talk-speaker">Jeroen Bakker — Blender Graphics Developer</div>
+        <div class="talk-tags"><span class="tag tag-red">DEVELOPMENT</span><span class="tag tag-blue">VULKAN</span><span class="tag tag-yellow">STABILITY</span></div>
+      </div>
+      <a class="watch-btn" href="https://www.youtube.com/playlist?list=PLa1F2ddGya_-Ymw4YlOjqrdQxiRMJql5x" target="_blank">▶ PLAYLIST</a>
+    </div>
+    <div class="talk-body">
+      <div class="talk-summary">Technical talk on why Blender crashes and how the team is fixing it. The key insight: newer hardware with Vulkan (replacing OpenGL) is far more stable. Explains the migration away from OpenGL, the state of the Vulkan backend, and why updating drivers/hardware makes such a difference in Blender stability.</div>
+    </div>
+  </div>
+
+  <div class="talk">
+    <div class="talk-header">
+      <div>
+        <div class="talk-title">Extensions: Should They Come Built-in?</div>
+        <div class="talk-speaker">Nika Kutsniashvili</div>
+        <div class="talk-tags"><span class="tag tag-yellow">EXTENSIONS</span><span class="tag tag-blue">ECOSYSTEM</span><span class="tag tag-green">PHILOSOPHY</span></div>
+      </div>
+      <a class="watch-btn" href="https://www.youtube.com/playlist?list=PLa1F2ddGya_-Ymw4YlOjqrdQxiRMJql5x" target="_blank">▶ PLAYLIST</a>
+    </div>
+    <div class="talk-body">
+      <div class="talk-summary">The new Extensions platform is a game-changer — but should everything be built into Blender itself? Nika argues for a healthy ecosystem of well-maintained extensions rather than feature bloat, explaining why not everything should be core. A thoughtful look at software design philosophy for open-source creative tools.</div>
+    </div>
+  </div>
+
+  <div class="talk">
+    <div class="talk-header">
+      <div>
+        <div class="talk-title">How to Improve Blender's UI</div>
+        <div class="talk-speaker">Andrew Price (Blender Guru)</div>
+        <div class="talk-tags"><span class="tag tag-yellow">UX</span><span class="tag tag-blue">UI</span><span class="tag tag-orange">COMMUNITY</span></div>
+      </div>
+      <a class="watch-btn" href="https://www.youtube.com/playlist?list=PLa1F2ddGya_-Ymw4YlOjqrdQxiRMJql5x" target="_blank">▶ PLAYLIST</a>
+    </div>
+    <div class="talk-body">
+      <div class="talk-summary">Andrew Price (Blender Guru — one of Blender's most influential tutorial creators with millions of YouTube subscribers) returns to BCON with concrete, researched proposals for improving Blender's user interface. Covers frustrations like the "hide collection" shortcuts, discoverability issues, and the importance of user feedback in software development. Also applies broader lessons from game development UX research.</div>
+      <div class="highlight-box"><strong>Top 10 community favorite.</strong> Regardless of whether you agree with every proposal, this is the most watched Blender UI talk in years and sparked wide community discussion.</div>
+    </div>
+  </div>
+</div>
+
+<!-- BLENDER STUDIO -->
+<div class="section" id="studio">
+  <div class="section-header">
+    <span class="section-icon">🎬</span>
+    <h2>BLENDER STUDIO — PROJECT GOLD & MORE</h2>
+  </div>
+
+  <div class="talk">
+    <div class="talk-header">
+      <div>
+        <div class="talk-title">Procedural Oil Painting — The Making of Project Gold's Brush System</div>
+        <div class="talk-speaker">Simon Thommes — Blender Studio</div>
+        <div class="talk-tags"><span class="tag tag-purple">ANIMATION</span><span class="tag tag-blue">GEO NODES</span><span class="tag tag-green">PROJECT GOLD</span></div>
+      </div>
+      <a class="watch-btn" href="https://www.youtube.com/playlist?list=PLa1F2ddGya_-Ymw4YlOjqrdQxiRMJql5x" target="_blank">▶ PLAYLIST</a>
+    </div>
+    <div class="talk-body">
+      <div class="talk-summary">Simon Thommes presents his work on Project Gold — Blender Studio's animated short with a distinctive procedural oil painting aesthetic. The Geometry Nodes-based brushstroke generation system creates convincing painted textures entirely in real-time 3D. The system is planned for release as a free extension. The project's avant-première screened at the BCON24 festival on Wednesday evening.</div>
+      <div class="highlight-box"><strong>Top 10 community favorite.</strong> The oil painting system is a landmark in procedural look-development and will be released as a free Blender extension.</div>
+    </div>
+  </div>
+
+  <div class="talk">
+    <div class="talk-header">
+      <div>
+        <div class="talk-title">Grease Pencil 3 — New Capabilities with Falk & the Studio Team</div>
+        <div class="talk-speaker">Rik, Pablico, Falk David — Blender Studio</div>
+        <div class="talk-tags"><span class="tag tag-green">GREASE PENCIL</span><span class="tag tag-blue">DEVELOPMENT</span><span class="tag tag-purple">2D ANIMATION</span></div>
+      </div>
+      <a class="watch-btn" href="https://www.youtube.com/playlist?list=PLa1F2ddGya_-Ymw4YlOjqrdQxiRMJql5x" target="_blank">▶ PLAYLIST</a>
+    </div>
+    <div class="talk-body">
+      <div class="talk-summary">Blender Studio artists Rik and Pablico join developer Falk David to present the new capabilities in Grease Pencil 3.0 — a major architectural rewrite of the 2D animation system. Covers performance improvements, new brush tools (including Vivien's new brush painting tool), and how GP3 enables more complex animation workflows.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CAREERS & COMMUNITY -->
+<div class="section" id="career">
+  <div class="section-header">
+    <span class="section-icon">💼</span>
+    <h2>CAREER, INDUSTRY & COMMUNITY</h2>
+  </div>
+
+  <div class="talk">
+    <div class="talk-header">
+      <div>
+        <div class="talk-title">Building a Career Around Blender</div>
+        <div class="talk-speaker">Jason van Gumster</div>
+        <div class="talk-tags"><span class="tag tag-yellow">CAREER</span><span class="tag tag-green">BUSINESS</span><span class="tag tag-blue">COMMUNITY</span></div>
+      </div>
+      <a class="watch-btn" href="https://www.youtube.com/playlist?list=PLa1F2ddGya_-Ymw4YlOjqrdQxiRMJql5x" target="_blank">▶ PLAYLIST</a>
+    </div>
+    <div class="talk-body">
+      <div class="talk-summary">Jason van Gumster (author of "Blender For Dummies," frequent Blender instructor) answers the fundamental question: can you make money with Blender? Covers the various paths — freelance, studio employment, tutorial creation, asset sales, add-on development — and how to position yourself as a valuable Blender artist or developer.</div>
+      <div class="highlight-box"><strong>Top 10 community favorite.</strong> Essential watching for anyone trying to make Blender their livelihood.</div>
+    </div>
+  </div>
+
+  <div class="talk">
+    <div class="talk-header">
+      <div>
+        <div class="talk-title">Virtual Crafting: Photorealism for Design & Marketing</div>
+        <div class="talk-speaker">Jess Wiseman — Blender Studio</div>
+        <div class="talk-tags"><span class="tag tag-yellow">PRODUCT VIZ</span><span class="tag tag-red">PHOTOREALISM</span><span class="tag tag-blue">MARKETING</span></div>
+      </div>
+      <a class="watch-btn" href="https://www.youtube.com/playlist?list=PLa1F2ddGya_-Ymw4YlOjqrdQxiRMJql5x" target="_blank">▶ PLAYLIST</a>
+    </div>
+    <div class="talk-body">
+      <div class="talk-summary">How Blender is used for photorealistic product visualization in design and marketing contexts — replacing traditional product photography with render-based imagery. Covers material accuracy, lighting for product presentation, and managing client expectations in a CG-based product visualization workflow.</div>
+    </div>
+  </div>
+
+  <div class="talk">
+    <div class="talk-header">
+      <div>
+        <div class="talk-title">Cycles Is Better Than You Think…</div>
+        <div class="talk-speaker">Turpal "Alex" Saytiev</div>
+        <div class="talk-tags"><span class="tag tag-red">CYCLES</span><span class="tag tag-yellow">PORTFOLIO</span><span class="tag tag-blue">TIPS</span></div>
+      </div>
+      <a class="watch-btn" href="https://www.youtube.com/playlist?list=PLa1F2ddGya_-Ymw4YlOjqrdQxiRMJql5x" target="_blank">▶ PLAYLIST</a>
+    </div>
+    <div class="talk-body">
+      <div class="talk-summary">A portfolio-style talk that mixes impressive renders with practical rendering tips — demonstrating the full ceiling of what Cycles can achieve when pushed properly. Covers material techniques, lighting setups, and the render settings that actually matter for quality. Received high marks for balancing inspiration with actionable content.</div>
+    </div>
+  </div>
+
+  <div class="talk">
+    <div class="talk-header">
+      <div>
+        <div class="talk-title">Ghosts of Ruin — Pipeline for Anime TV Series Production</div>
+        <div class="talk-speaker">Juan Carlos Garcia del Blanco</div>
+        <div class="talk-tags"><span class="tag tag-purple">ANIME</span><span class="tag tag-green">NPR</span><span class="tag tag-blue">PIPELINE</span></div>
+      </div>
+      <a class="watch-btn" href="https://www.youtube.com/playlist?list=PLa1F2ddGya_-Ymw4YlOjqrdQxiRMJql5x" target="_blank">▶ PLAYLIST</a>
+    </div>
+    <div class="talk-body">
+      <div class="talk-summary">Pipeline and shading for "Ghosts of Ruin" — a young adults anime TV series production using Blender. Covers the full production pipeline for an NPR animated series: character rigging, stylized shading with Grease Pencil and EEVEE, render pipeline, and the organizational workflow for a serialized production.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ADDON DEV -->
+<div class="section" id="addons">
+  <div class="section-header">
+    <span class="section-icon">🔌</span>
+    <h2>ADD-ON DEVELOPMENT & EXTENSIONS</h2>
+  </div>
+
+  <div class="talk">
+    <div class="talk-header">
+      <div>
+        <div class="talk-title">Remastering Your Add-ons as Extensions</div>
+        <div class="talk-speaker">Spencer Magnusson</div>
+        <div class="talk-tags"><span class="tag tag-yellow">EXTENSIONS</span><span class="tag tag-blue">PYTHON</span><span class="tag tag-green">DEVELOPMENT</span></div>
+      </div>
+      <a class="watch-btn" href="https://www.youtube.com/playlist?list=PLa1F2ddGya_-Ymw4YlOjqrdQxiRMJql5x" target="_blank">▶ PLAYLIST</a>
+    </div>
+    <div class="talk-body">
+      <div class="talk-summary">A practical guide for add-on developers on how to convert existing Blender add-ons into the new Extensions format. Covers the changes required, how to handle dependencies via the new packaging system, and how to submit to extensions.blender.org. (Note: this talk was pre-recorded because Spencer got sick before the conference.)</div>
+      <div class="detail-label">References</div>
+      <div class="detail-text"><a href="https://extensions.blender.org" target="_blank" style="color:var(--orange)">extensions.blender.org</a> · Python packaging · Extension metadata format</div>
+    </div>
+  </div>
+</div>
+
+<!-- LIGHTNING TALKS -->
+<div class="section" id="lightning">
+  <div class="section-header">
+    <span class="section-icon">⚡</span>
+    <h2>LIGHTNING TALKS & SUZANNE AWARDS</h2>
+    <span class="section-count">14 lightning talks</span>
+  </div>
+  <p style="font-size:14px;color:var(--text-dim);margin-bottom:20px;line-height:1.7;">
+    <a href="https://conference.blender.org/2024/presentations/3915/" style="color:var(--orange)" target="_blank">Full program at conference.blender.org</a>
+  </p>
+  <div class="lightning-grid">
+    <div class="lightning-item"><div class="lightning-num">01</div><div class="lightning-name">Preparing for Animation: Developing Characters for a New Film</div><div class="lightning-speaker">Kajetan Kwasniewski</div></div>
+    <div class="lightning-item"><div class="lightning-num">02</div><div class="lightning-name">Struggling with material compilation performance?</div><div class="lightning-speaker">Jeroen Bakker</div></div>
+    <div class="lightning-item"><div class="lightning-num">03</div><div class="lightning-name">Visualization of female erectile tissue</div><div class="lightning-speaker">Nienke Helder & Josef Trojan</div></div>
+    <div class="lightning-item"><div class="lightning-num">04</div><div class="lightning-name">GamiFlow — Easy bake helper for game assets</div><div class="lightning-speaker">Mathieu Einig</div></div>
+    <div class="lightning-item"><div class="lightning-num">05</div><div class="lightning-name">No Budget, No Limit — Live show with Blender</div><div class="lightning-speaker">EosFoxx</div></div>
+    <div class="lightning-item"><div class="lightning-num">06</div><div class="lightning-name">KOROSHI</div><div class="lightning-speaker">Pierrick Picaut</div></div>
+    <div class="lightning-item"><div class="lightning-num">07</div><div class="lightning-name">Blender in Germany</div><div class="lightning-speaker">Gottfried Hofmann</div></div>
+    <div class="lightning-item"><div class="lightning-num">08</div><div class="lightning-name">Who can guess the prompt?</div><div class="lightning-speaker">Frederik Steinmetz</div></div>
+    <div class="lightning-item"><div class="lightning-num">09</div><div class="lightning-name">Future Past Creatives Studio</div><div class="lightning-speaker">Amanpreet Bajwa</div></div>
+    <div class="lightning-item"><div class="lightning-num">10</div><div class="lightning-name">Multi-channel music visualization with geoMIDI</div><div class="lightning-speaker">Adam Conyne</div></div>
+    <div class="lightning-item"><div class="lightning-num">11</div><div class="lightning-name">Orbit Studio</div><div class="lightning-speaker">Boris Croise</div></div>
+    <div class="lightning-item"><div class="lightning-num">12</div><div class="lightning-name">BCON LA Recap</div><div class="lightning-speaker">Jason van Gumster & Amber Kelly</div></div>
+    <div class="lightning-item"><div class="lightning-num">13</div><div class="lightning-name">Pixel Art & Blender</div><div class="lightning-speaker">Thomas Radeke</div></div>
+    <div class="lightning-item"><div class="lightning-num">14</div><div class="lightning-name">Promoting Blender in China</div><div class="lightning-speaker">Tim Tan</div></div>
+  </div>
+</div>
+
+<div class="toc" style="margin-top:48px;">
+  <div class="toc-title">⭐ Community Top 10 Favorites — BCON24</div>
+  <div class="toc-grid">
+    <a href="https://www.youtube.com/playlist?list=PLa1F2ddGya_-Ymw4YlOjqrdQxiRMJql5x" target="_blank">Keynote — Ton Roosendaal</a>
+    <a href="https://www.youtube.com/playlist?list=PLa1F2ddGya_-Ymw4YlOjqrdQxiRMJql5x" target="_blank">Building a Career Around Blender — Jason van Gumster</a>
+    <a href="https://www.youtube.com/playlist?list=PLa1F2ddGya_-Ymw4YlOjqrdQxiRMJql5x" target="_blank">Cycles is Better Than You Think — Alex Saytiev</a>
+    <a href="https://www.youtube.com/playlist?list=PLa1F2ddGya_-Ymw4YlOjqrdQxiRMJql5x" target="_blank">Denoising in Cycles — Lukas Stockner</a>
+    <a href="https://www.youtube.com/playlist?list=PLa1F2ddGya_-Ymw4YlOjqrdQxiRMJql5x" target="_blank">Forget About Nodes (Gizmos) — Simon Thommes</a>
+    <a href="https://www.youtube.com/playlist?list=PLa1F2ddGya_-Ymw4YlOjqrdQxiRMJql5x" target="_blank">Extensions: Should They Be Built-in? — Nika Kutsniashvili</a>
+    <a href="https://www.youtube.com/playlist?list=PLa1F2ddGya_-Ymw4YlOjqrdQxiRMJql5x" target="_blank">How to Improve Blender's UI — Andrew Price</a>
+    <a href="https://www.youtube.com/playlist?list=PLa1F2ddGya_-Ymw4YlOjqrdQxiRMJql5x" target="_blank">Why Does Blender Crash? — Jeroen Bakker</a>
+    <a href="https://www.youtube.com/playlist?list=PLa1F2ddGya_-Ymw4YlOjqrdQxiRMJql5x" target="_blank">Procedural Oil Painting — Simon Thommes</a>
+    <a href="https://www.youtube.com/playlist?list=PLa1F2ddGya_-Ymw4YlOjqrdQxiRMJql5x" target="_blank">Remastering Add-ons as Extensions — Spencer Magnusson</a>
+  </div>
+</div>
+
+<div class="notice" style="margin-top:28px;">
+  <strong>Full playlist:</strong> All ~60 BCON24 talks are at <a href="https://www.youtube.com/playlist?list=PLa1F2ddGya_-Ymw4YlOjqrdQxiRMJql5x" target="_blank" style="color:var(--blue)">youtube.com/playlist?list=PLa1F2ddGya_-Ymw4YlOjqrdQxiRMJql5x</a>. The Blender Studio blog has a dedicated post at <a href="https://studio.blender.org/blog/blender-studio-at-the-bcon24/" target="_blank" style="color:var(--blue)">studio.blender.org</a>.
+</div>
+
+</main>
+
+<footer>
+  <p>BCON24 Field Guide · October 23–25, 2024 · Felix Meritis, Amsterdam</p>
+  <p style="margin-top:8px;">Playlist: <a href="https://www.youtube.com/playlist?list=PLa1F2ddGya_-Ymw4YlOjqrdQxiRMJql5x" target="_blank">youtube.com/playlist?list=PLa1F2ddGya_-Ymw4YlOjqrdQxiRMJql5x</a></p>
+</footer>
+
+</body>
+</html>
