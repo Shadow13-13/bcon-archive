@@ -25,32 +25,6 @@ A complete, community-maintained archive of every Blender Conference — with ta
 
 ---
 
-## How to host on GitHub Pages
-
-### Option A — Direct upload (easiest)
-
-1. Create a new GitHub repository (e.g. `bcon-archive`)
-2. Upload all files from this folder to the repository root
-3. Go to **Settings → Pages**
-4. Under **Source**, select `Deploy from a branch` → `main` → `/ (root)`
-5. Click **Save**
-6. Your site will be live at `https://your-username.github.io/bcon-archive`
-
-### Option B — Git clone & push
-
-```bash
-git clone https://github.com/your-username/bcon-archive.git
-cd bcon-archive
-# Copy all .html and .css files here
-git add .
-git commit -m "Initial BCON archive"
-git push origin main
-```
-
-Then enable GitHub Pages in repository Settings as above.
-
----
-
 ## File structure
 
 ```
@@ -66,19 +40,6 @@ bcon-archive/
 ```
 
 All files are self-contained static HTML — no build step, no JavaScript framework, no dependencies except Google Fonts (loaded from CDN). Works offline if you cache the fonts.
-
----
-
-## Adding a new year
-
-When a new BCON happens:
-
-1. Copy an existing year's file (e.g. `bcon25.html`) as your template
-2. Rename it (e.g. `bcon26.html`)
-3. Update all content, links, and metadata
-4. Add a nav link to every existing file
-5. Add an entry card to `index.html`
-6. Commit and push
 
 ---
 
