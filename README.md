@@ -1,9 +1,8 @@
-# BCON Archive — Blender Conference Field Guides
+<img width="826" height="195" alt="image" src="https://github.com/user-attachments/assets/0e7eb701-fe2d-41a9-99f6-d80977e89a35" /># BCON Archive — Blender Conference Field Guides
 
 A complete, community-maintained archive of every Blender Conference — with talk summaries, speaker info, YouTube links, tools discussed, and context for every level of Blender user.
 
-**Live site:** [Shadow13-13.github.io/bcon-archive](https://your-username.github.io/bcon-archive)
-
+**Live site:** https://shadow13-13.github.io/bcon-archive/
 ---
 
 ## What's inside
